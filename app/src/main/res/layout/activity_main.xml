@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
 
     <com.hadilo.spinnertextinputlayout.widget.spinner.SpinnerTextInputLayout
         android:id="@+id/spinner_gender"
@@ -24,7 +26,24 @@
 
         <!--style="?attr/spinnerDropDownItemStyle"-->
 
+    </com.hadilo.spinnertextinputlayout.widget.spinner.SpinnerTextInputLayout>
 
+    <com.hadilo.spinnertextinputlayout.widget.spinner.SpinnerTextInputLayout
+        android:id="@+id/spinner_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_black_24"
+            android:drawableRight="@drawable/ic_baseline_arrow_drop_down_black_24"
+            android:singleLine="true"
+            android:hint="Color" />
+
+        <!--style="?attr/spinnerDropDownItemStyle"-->
 
     </com.hadilo.spinnertextinputlayout.widget.spinner.SpinnerTextInputLayout>
 
