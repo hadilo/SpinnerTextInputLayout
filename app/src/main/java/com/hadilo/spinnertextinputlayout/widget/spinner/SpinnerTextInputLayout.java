@@ -65,7 +65,6 @@ public class SpinnerTextInputLayout extends TextInputLayout {
         getEditText().setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         getEditText().setCursorVisible(false);
         getEditText().setFocusable(false);
-        Log.d(TAG, "onDraw:");
 //        getEditText().setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(getContext(), R.drawable.ic_arrow_drop_down_black_24dp), null);
     }
 
@@ -92,7 +91,6 @@ public class SpinnerTextInputLayout extends TextInputLayout {
 
         configureOnClickListener();
 
-        Log.d(TAG, "setItems: " + mListableItems[0]);
     }
 
     private int mode;
@@ -109,13 +107,10 @@ public class SpinnerTextInputLayout extends TextInputLayout {
             @Override
             public void onClick(View view) {
                 setValidate(true);
-                Log.d(TAG, "onClick: " + isValidate());
-
                 switch (mode)
                 {
                     case MODE_DROPDOWN:
                         spinner.performClick();
-                        Log.d(TAG, "onClick: spinner.performClick();");
                         break;
 
                     case MODE_POPUP:
@@ -130,7 +125,6 @@ public class SpinnerTextInputLayout extends TextInputLayout {
                 spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        Log.d(TAG, "onItemSelected: " + isValidate());
                         if (onItemSelectedListener != null && isValidate()) {
                             onItemSelectedListener.onItemSelectedListener(mItems.get(i), i);
                             setValidate(false);
@@ -139,7 +133,6 @@ public class SpinnerTextInputLayout extends TextInputLayout {
 
                     @Override
                     public void onNothingSelected(AdapterView<?> adapterView) {
-                        Log.d(TAG, "onNothingSelected: ");
                         if (onItemSelectedListener != null) {
                             onItemSelectedListener.onItemSelectedListener(null, -1);
                         }
@@ -177,7 +170,6 @@ public class SpinnerTextInputLayout extends TextInputLayout {
     }
 
     public void setSelection(int position){
-        Log.d(TAG, "setSelection: ");
         spinner.setSelection(position, true);
     }
 
