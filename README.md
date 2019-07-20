@@ -1,1 +1,3 @@
 # SpinnerTextInputLayout
+
+![](penampakan.gif)
